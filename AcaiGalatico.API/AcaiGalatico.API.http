@@ -1,0 +1,15 @@
+@AcaiGalatico.API_HostAddress = http://127.0.0.1:5207
+# Use o mesmo valor configurado em Api:Key (user-secrets). Não grave a chave real neste arquivo.
+@ApiKey = coloque-aqui-a-sua-chave-local
+
+GET {{AcaiGalatico.API_HostAddress}}/api/Products
+Accept: application/json
+X-Api-Key: {{ApiKey}}
+
+###
+
+GET {{AcaiGalatico.API_HostAddress}}/api/pedidos
+Accept: application/json
+X-Api-Key: {{ApiKey}}
+
+###
