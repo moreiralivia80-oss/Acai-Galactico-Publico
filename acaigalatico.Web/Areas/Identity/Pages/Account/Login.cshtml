@@ -1,0 +1,84 @@
+@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Entrar";
+}
+
+<div class="position-relative login-page">
+    
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                
+                <div class="glass-card p-5 animate__animated animate__fadeInUp">
+                    
+                    <div class="text-center mb-4">
+                        @if (Request.Query["isAdmin"] == "true")
+                        {
+                            <i class="fas fa-user-shield icon-glow"></i>
+                            <h2 class="text-white fw-bold">Área Restrita</h2>
+                            <p class="text-white-50">Acesso exclusivo para funcionários</p>
+                        }
+                        else
+                        {
+                            <i class="fas fa-user-circle icon-glow"></i>
+                            <h2 class="text-white fw-bold">Bem-vindo(a)</h2>
+                            <p class="text-white-50">Entre ou cadastre-se para continuar</p>
+                        }
+                    </div>
+
+                    <form method="post" autocomplete="off">
+                        
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                        <!-- LOGIN -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Login"
+                                   class="form-control custom-input"
+                                   autocomplete="off"
+                                   placeholder="Login" />
+
+                            <label asp-for="Input.Login">
+                                @(Request.Query["isAdmin"] == "true" ? "Usuário" : "Email")
+                            </label>
+                        </div>
+
+                        <!-- SENHA -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Password"
+                                   type="password"
+                                   class="form-control custom-input"
+                                   autocomplete="new-password"
+                                   placeholder="Senha" />
+
+                            <label asp-for="Input.Password">Senha</label>
+                        </div>
+
+                      
+
+                        <button type="submit" class="btn-login">
+                            Entrar <i class="fas fa-sign-in-alt ms-2"></i>
+                        </button>
+
+                        <div class="text-center mt-3">
+                            <a asp-page="./ForgotPassword" asp-route-email="@Model.Input?.Login" class="link-light small">
+                                Esqueceu sua senha?
+                            </a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+                        

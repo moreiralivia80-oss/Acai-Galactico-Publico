@@ -1,0 +1,89 @@
+@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<div class="position-relative register-page">
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+
+                <div class="glass-card p-5 animate__animated animate__fadeInUp">
+
+                    <div class="text-center mb-4">
+                        <i class="fas fa-user-plus icon-glow"></i>
+                        <h2 class="text-white fw-bold">Criar Conta</h2>
+                        <p class="text-white-50">Junte-se ao universo do sabor!</p>
+                    </div>
+
+                    <form method="post" autocomplete="off">
+
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                        <!-- NOME -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Nome"
+                                   class="form-control custom-input"
+                                   autocomplete="off"
+                                   placeholder="Nome" />
+                            <label asp-for="Input.Nome">Nome Completo</label>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Email"
+                                   class="form-control custom-input"
+                                   autocomplete="off"
+                                   placeholder="Email" />
+                            <label asp-for="Input.Email">Email</label>
+                        </div>
+
+                        <!-- SENHA -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Password"
+                                   type="password"
+                                   class="form-control custom-input"
+                                   autocomplete="new-password"
+                                   placeholder="Senha" />
+                            <label asp-for="Input.Password">Senha</label>
+                        </div>
+
+                        <!-- CONFIRMAR -->
+                        <div class="form-floating mb-4">
+                            <input asp-for="Input.ConfirmPassword"
+                                   type="password"
+                                   class="form-control custom-input"
+                                   autocomplete="new-password"
+                                   placeholder="Confirmar Senha" />
+                            <label asp-for="Input.ConfirmPassword">Confirmar Senha</label>
+                        </div>
+
+                        <button type="submit" class="btn-login">
+                            Cadastrar <i class="fas fa-rocket ms-2"></i>
+                        </button>
+
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <p class="text-white-50 mb-0">
+                            Já tem uma conta?
+                            <a asp-page="./Login" class="text-warning fw-bold text-decoration-none">
+                                Entrar
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
