@@ -77,8 +77,8 @@ acaiGalatico.UI               Aplicativo desktop (Windows Forms + Guna UI)
 Pré-requisitos: [.NET 10 SDK](https://dotnet.microsoft.com/download) e, para o app desktop, Windows.
 
 ```bash
-git clone https://github.com/moreiralivia80-oss/acai-galactico.git
-cd acai-galactico
+git clone https://github.com/moreiralivia80-oss/Acai-Galactico-Publico.git
+cd Acai-Galactico-Publico
 dotnet restore
 ```
 
@@ -142,4 +142,4 @@ acai-galactico/
 ## Autora
 
 **Lívia Moreira Teixeira**, estudante de Análise e Desenvolvimento de Sistemas.
-[GitHub](https://github.com/moreiralivia80-oss)
+[LinkedIn](https://www.linkedin.com/in/liviamoreira-software/) · [GitHub](https://github.com/moreiralivia80-oss)
